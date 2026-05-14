@@ -1,0 +1,31 @@
+---
+import { getCollection, type CollectionEntry } from 'astro:content';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import DiscographyDetail from '../../../components/DiscographyDetail.astro';
+import { pickLocalized } from '../../../lib/i18n';
+import { findSiblings, isPrimary } from '../../../lib/discography';
+
+export async function getStaticPaths() {
+  const entries = await getCollection('discography');
+  return entries.map((entry) => ({
+    params: { slug: entry.id },
+    props: {
+      entry,
+      siblings: findSiblings(entries, entry),
+      primary: isPrimary(entries, entry),
+    },
+  }));
+}
+
+interface Props {
+  entry: CollectionEntry<'discography'>;
+  siblings: CollectionEntry<'discography'>[];
+  primary: boolean;
+}
+
+const { entry, siblings, primary } = Astro.props;
+const title = pickLocalized(entry.data.title, 'en');
+---
+<BaseLayout lang="en" title={title}>
+  <DiscographyDetail entry={entry} siblings={siblings} isPrimary={primary} lang="en" />
+</BaseLayout>

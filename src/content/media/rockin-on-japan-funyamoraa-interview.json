@@ -1,0 +1,26 @@
+{
+  "type": "magazine",
+  "title": {
+    "ja": "「フニャモラー」ロングインタビュー",
+    "en": "\"Funyamorar\" Long Interview"
+  },
+  "date": "1991",
+  "outlet": {
+    "ja": "ロッキング・オン・ジャパン",
+    "en": "Rockin'on Japan"
+  },
+  "issue": "1991年内号 (具体的な号数は要確認)",
+  "description": {
+    "ja": "ロッキング・オン・ジャパンに掲載されたフリッパーズ・ギターのロングインタビュー。フニャフニャしてモラトリアム的なメンタリティーを指して同誌が命名した造語「フニャモラー」を巡る議論が中心。本編に加え延長戦的な企画「フニャモラーズ・ミーティング (焼肉屋MIX)」も同号 (もしくは関連号) に掲載。ユニコーン等との音楽性比較にも言及。",
+    "en": "A long-form interview with Flipper's Guitar published in Rockin'on Japan, centered on the magazine's coined term \"Funyamorar\" — a description of FG's languid, moratorium-like sensibility. The main interview was accompanied by an extended companion piece titled \"Funyamorars' Meeting (Yakiniku-ya MIX)\". The discussion also touches on contemporary comparisons (e.g. with Unicorn)."
+  },
+  "sources": [
+    {
+      "type": "website",
+      "citation": "「1990年代のはじめにフリッパーズ・ギターと山下達郎を聴いていた。」(個人ブログ)",
+      "url": "https://ameblo.jp/rljp/entry-12401168528.html",
+      "accessedAt": "2026-05-14",
+      "note": "フニャモラー特集の存在とフニャモラーズ・ミーティング併載の参照。元雑誌の号数・発売日・ページ数は当該記事に明記されておらず未確認"
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "type": "album",
+  "title": {
+    "ja": "three cheers for our side 〜海へ行くつもりじゃなかった〜",
+    "en": "Three Cheers for Our Side ~ We Didn't Mean to Go to Sea"
+  },
+  "releaseGroup": "three-cheers-for-our-side",
+  "releaseDate": "1993-09-01",
+  "catalogNumber": "PSCR-5046",
+  "label": "Polystar",
+  "formats": ["cd"],
+  "tracks": [
+    { "number": 1,  "title": { "ja": "Hello",                              "en": "Hello" },                              "duration": "3:15" },
+    { "number": 2,  "title": { "ja": "Boys Fire the Tricot",               "en": "Boys Fire the Tricot" },               "duration": "2:49" },
+    { "number": 3,  "title": { "ja": "Joyride",                            "en": "Joyride" },                            "duration": "2:50" },
+    { "number": 4,  "title": { "ja": "Coffee-Milk Crazy",                  "en": "Coffee-Milk Crazy" },                  "duration": "3:28" },
+    { "number": 5,  "title": { "ja": "My Red Shoes Story",                 "en": "My Red Shoes Story" },                 "duration": "3:54" },
+    { "number": 6,  "title": { "ja": "Exotic Lollipop (And Other Red Roses)", "en": "Exotic Lollipop (And Other Red Roses)" }, "duration": "1:42" },
+    { "number": 7,  "title": { "ja": "Happy Like a Honeybee",              "en": "Happy Like a Honeybee" },              "duration": "3:03" },
+    { "number": 8,  "title": { "ja": "Samba Parade",                       "en": "Samba Parade" },                       "duration": "2:43" },
+    { "number": 9,  "title": { "ja": "Sending to Your Heart",              "en": "Sending to Your Heart" },              "duration": "3:12" },
+    { "number": 10, "title": { "ja": "Goodbye, Our Pastels Badges",        "en": "Goodbye, Our Pastels Badges" },        "duration": "3:03" },
+    { "number": 11, "title": { "ja": "The Chime Will Ring",                "en": "The Chime Will Ring" },                "duration": "5:04" },
+    { "number": 12, "title": { "ja": "Red Flag on the Gondola",            "en": "Red Flag on the Gondola" },            "duration": "2:30" }
+  ],
+  "description": {
+    "ja": "1989年オリジナル盤の再発CD。トラックリストは原盤と同一 (12曲)。",
+    "en": "1993 reissue CD of the 1989 original. Tracklist matches the original (12 tracks)."
+  },
+  "sources": [
+    {
+      "type": "website",
+      "citation": "MusicBrainz — Three Cheers for Our Side, 1993 reissue (f9ccbbed)",
+      "url": "https://musicbrainz.org/release/f9ccbbed-3f4e-3e23-9daf-b39570cd7b7d",
+      "accessedAt": "2026-05-05"
+    }
+  ]
+}

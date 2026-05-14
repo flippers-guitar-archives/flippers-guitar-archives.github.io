@@ -1,0 +1,213 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import {
+  ui, sourceTypeLabels,
+  pickLocalized, pickLocalizedOptional, localePath, type Locale,
+} from '../lib/i18n';
+
+interface Props {
+  entry: CollectionEntry<'live'>;
+  lang: Locale;
+}
+
+const { entry, lang } = Astro.props;
+const t = ui[lang];
+const d = entry.data;
+const desc = pickLocalizedOptional(d.description, lang);
+const venueName = pickLocalized(d.venue.name, lang);
+const venueCity = pickLocalizedOptional(d.venue.city, lang);
+const venueLocation = [venueCity, d.venue.prefecture].filter(Boolean).join(', ');
+---
+<article class="live-detail">
+  <p class="back"><a href={localePath(lang, '/live')}>← {t.live}</a></p>
+
+  <header>
+    <p class="kicker">{d.date ?? '----'}</p>
+    <h1>{pickLocalized(d.title, lang)}</h1>
+    <p class="venue-line">
+      {venueName}
+      {venueLocation && <span class="venue-loc"> · {venueLocation}</span>}
+    </p>
+  </header>
+
+  <dl class="meta">
+    {d.tour && (<><dt>{t.tour}</dt><dd>{d.tour}</dd></>)}
+    {d.host && (<><dt>{t.guestAt}</dt><dd>{d.host}</dd></>)}
+    {d.withActs && d.withActs.length > 0 && (
+      <><dt>{t.withActs}</dt><dd>{d.withActs.join(' / ')}</dd></>
+    )}
+  </dl>
+
+  {desc && (
+    <section>
+      <h2>{ui[lang].description}</h2>
+      <p class="description">{desc}</p>
+    </section>
+  )}
+
+  {d.lineup && d.lineup.length > 0 && (
+    <section>
+      <h2>{t.lineup}</h2>
+      <ul class="lineup">
+        {d.lineup.map(m => (
+          <li>
+            <span class="member-name">{m.name}</span>
+            <span class="member-role">
+              {pickLocalized(m.role, lang)}
+              {m.isSupport && <span class="support-tag"> ({t.support})</span>}
+            </span>
+          </li>
+        ))}
+      </ul>
+    </section>
+  )}
+
+  <section>
+    <h2>{t.setlist}</h2>
+    {d.setlist && d.setlist.length > 0 ? (
+      <ol class="setlist">
+        {d.setlist.map(item => {
+          const note = pickLocalizedOptional(item.notes, lang);
+          return (
+            <li value={item.position} class:list={[{ encore: item.encore }]}>
+              {item.encore && <span class="encore-tag">{t.encore}</span>}
+              <span class="song-title">
+                {item.reference
+                  ? <a href={localePath(lang, `/discography/${item.reference}`)}>{pickLocalized(item.title, lang)}</a>
+                  : pickLocalized(item.title, lang)}
+              </span>
+              {item.isCover && (
+                <span class="cover-tag">
+                  {t.cover}{item.originalArtist && ` · ${t.originalBy} ${item.originalArtist}`}
+                </span>
+              )}
+              {note && <span class="track-note"> — {note}</span>}
+            </li>
+          );
+        })}
+      </ol>
+    ) : (
+      <p class="no-data">{t.noSetlist}</p>
+    )}
+  </section>
+
+  <section>
+    <h2>{t.sources}</h2>
+    <ol class="sources">
+      {d.sources.map(s => (
+        <li>
+          <span class="source-type">[{sourceTypeLabels[lang][s.type]}]</span>
+          {s.url
+            ? <a href={s.url} target="_blank" rel="noopener noreferrer">{s.citation}</a>
+            : <span>{s.citation}</span>}
+          {s.accessedAt && <span class="accessed"> ({t.accessedAt}: {s.accessedAt})</span>}
+          {s.note && <span class="note"> — {s.note}</span>}
+        </li>
+      ))}
+    </ol>
+  </section>
+</article>
+
+<style>
+  .live-detail .back { font-size: 0.875rem; margin: 0 0 1.5rem; }
+  .live-detail header { margin-bottom: 1.5rem; }
+  .live-detail .kicker {
+    margin: 0;
+    font-variant-numeric: tabular-nums;
+    color: var(--color-fg-dim);
+    font-size: 0.875rem;
+    letter-spacing: 0.04em;
+  }
+  .live-detail h1 {
+    font-size: 1.75rem;
+    margin: 0.25rem 0 0.5rem;
+  }
+  .venue-line {
+    margin: 0;
+    color: var(--color-fg-dim);
+    font-size: 0.95rem;
+  }
+  .venue-loc { color: var(--color-fg-dim); }
+  .meta {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: 0.25rem 1.25rem;
+    padding: 1rem 0;
+    margin: 0 0 2rem;
+    border-top: 1px solid var(--color-rule);
+    border-bottom: 1px solid var(--color-rule);
+    font-size: 0.95rem;
+  }
+  .meta dt { color: var(--color-fg-dim); font-size: 0.8125rem; }
+  .meta dd { margin: 0; }
+  section { margin: 2rem 0; }
+  section h2 {
+    font-size: 1.05rem;
+    margin: 0 0 0.75rem;
+    padding-bottom: 0.25rem;
+    border-bottom: 1px solid var(--color-rule);
+  }
+  .description { margin: 0; }
+  .lineup {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: 0.25rem 1rem;
+  }
+  .lineup li { display: contents; }
+  .lineup .member-name { font-weight: 500; }
+  .lineup .member-role { color: var(--color-fg-dim); font-size: 0.875rem; }
+  .support-tag { font-style: italic; }
+  .setlist {
+    padding-left: 2rem;
+    margin: 0;
+  }
+  .setlist li {
+    padding: 0.25rem 0;
+    display: flex;
+    gap: 0.5rem;
+    align-items: baseline;
+    flex-wrap: wrap;
+  }
+  .setlist li.encore {
+    margin-top: 0.5rem;
+    border-top: 1px dashed var(--color-rule);
+    padding-top: 0.5rem;
+  }
+  .encore-tag {
+    font-size: 0.6875rem;
+    color: var(--color-accent);
+    border: 1px solid var(--color-accent);
+    border-radius: 999px;
+    padding: 0.05em 0.5em;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+  .song-title { font-weight: 500; }
+  .cover-tag {
+    font-size: 0.75rem;
+    color: var(--color-fg-dim);
+    background: var(--color-rule);
+    border-radius: 4px;
+    padding: 0.05em 0.4em;
+  }
+  .track-note { color: var(--color-fg-dim); font-size: 0.8125rem; }
+  .no-data { color: var(--color-fg-dim); font-style: italic; margin: 0; }
+  .sources {
+    padding-left: 1.5rem;
+    margin: 0;
+    font-size: 0.9rem;
+  }
+  .sources li { padding: 0.25rem 0; }
+  .source-type {
+    color: var(--color-fg-dim);
+    font-size: 0.8125rem;
+    margin-right: 0.25rem;
+  }
+  .accessed, .note {
+    color: var(--color-fg-dim);
+    font-size: 0.8125rem;
+  }
+</style>

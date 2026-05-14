@@ -1,0 +1,39 @@
+{
+  "type": "participation",
+  "title": {
+    "ja": "大好きなシャツ (1990旅行作戦)",
+    "en": "Daisuki na Shirt (1990 Ryokō Sakusen)"
+  },
+  "artist": "渡辺満里奈",
+  "releaseGroup": "daisuki-na-shirt",
+  "releaseDate": "1990-07-01",
+  "label": "Polystar",
+  "formats": ["cd-single"],
+  "credits": [
+    { "role": { "ja": "作詞・作曲・編曲", "en": "Lyrics, Music, Arrangement" }, "name": "Double K.O. Corporation" }
+  ],
+  "tracks": [
+    { "number": 1, "title": { "ja": "大好きなシャツ (1990旅行作戦)", "en": "Daisuki na Shirt (1990 Ryokō Sakusen)" } },
+    { "number": 2, "title": { "ja": "BE WITH YOU", "en": "BE WITH YOU" }, "notes": { "ja": "B面", "en": "B-side" } }
+  ],
+  "description": {
+    "ja": "渡辺満里奈の13thシングル。表題曲は Flipper's Guitar (小山田圭吾・小沢健二) が「Double K.O. Corporation」名義で楽曲提供。8cm CDシングル仕様。FG が他アーティストへの楽曲提供時に用いた覆面プロジェクト名義として知られる。",
+    "en": "Marina Watanabe's 13th single. The title track was written for her by Flipper's Guitar (Keigo Oyamada and Kenji Ozawa) under their pseudonym \"Double K.O. Corporation\". Issued as an 8cm CD single. \"Double K.O. Corporation\" is the alias FG used when providing songs to other artists."
+  },
+  "sources": [
+    {
+      "type": "website",
+      "citation": "ORICON NEWS — 渡辺満里奈「大好きなシャツ」",
+      "url": "https://www.oricon.co.jp/prof/239817/products/107918/1/",
+      "accessedAt": "2026-05-07",
+      "note": "リリース日 (1990-07-01) と13thシングルとしての位置付け"
+    },
+    {
+      "type": "website",
+      "citation": "Wikipedia 日本語版「フリッパーズ・ギター」",
+      "url": "https://ja.wikipedia.org/wiki/%E3%83%95%E3%83%AA%E3%83%83%E3%83%91%E3%83%BC%E3%82%BA%E3%83%BB%E3%82%AE%E3%82%BF%E3%83%BC",
+      "accessedAt": "2026-05-07",
+      "note": "FG (Double K.O. Corporation 名義) による楽曲提供であることの確認"
+    }
+  ]
+}

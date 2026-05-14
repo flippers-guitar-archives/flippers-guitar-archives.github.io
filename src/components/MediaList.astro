@@ -1,0 +1,149 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import {
+  ui, mediaTypeLabels,
+  pickLocalized, pickLocalizedOptional, type Locale,
+} from '../lib/i18n';
+
+interface Props {
+  entries: CollectionEntry<'media'>[];
+  lang: Locale;
+}
+
+const { entries, lang } = Astro.props;
+const t = ui[lang];
+
+type MediaType = CollectionEntry<'media'>['data']['type'];
+
+const TYPE_ORDER: MediaType[] = ['magazine', 'newspaper', 'tv', 'radio', 'book'];
+
+const byType = new Map<MediaType, CollectionEntry<'media'>[]>();
+for (const e of entries) {
+  const type = e.data.type;
+  const list = byType.get(type);
+  if (list) list.push(e);
+  else byType.set(type, [e]);
+}
+
+const sections = TYPE_ORDER
+  .filter((type) => byType.has(type))
+  .map((type) => ({
+    type,
+    entries: byType.get(type)!.toSorted((a, b) =>
+      (a.data.date ?? '9999').localeCompare(b.data.date ?? '9999')
+    ),
+  }));
+---
+<section class="media-list">
+  <h1>{t.media} <span class="count">({t.entryCount(entries.length)})</span></h1>
+
+  {sections.map(section => (
+    <section class="type-section">
+      <h2>
+        {mediaTypeLabels[lang][section.type]}
+        {section.entries.length > 1 && (
+          <span class="section-count">{t.entryCount(section.entries.length)}</span>
+        )}
+      </h2>
+      <ul class="entries">
+        {section.entries.map(entry => {
+          const d = entry.data;
+          const outletName = pickLocalized(d.outlet, lang);
+          const programName = pickLocalizedOptional(d.program, lang);
+          const outletParts = [outletName, programName, d.issue, d.pages].filter(Boolean);
+          return (
+            <li id={entry.id} class="entry">
+              <div class="row">
+                <span class="date">{d.date ?? '----'}</span>
+                <span class="outlet-line">{outletParts.join(' · ')}</span>
+                <span class="title">
+                  {d.url
+                    ? <a href={d.url} target="_blank" rel="noopener noreferrer">{pickLocalized(d.title, lang)}</a>
+                    : pickLocalized(d.title, lang)}
+                </span>
+              </div>
+            </li>
+          );
+        })}
+      </ul>
+    </section>
+  ))}
+</section>
+
+<style>
+  .media-list h1 {
+    margin: 0 0 0.5rem;
+    font-size: 1.5rem;
+  }
+  .media-list .count {
+    color: var(--color-fg-dim);
+    font-weight: normal;
+    font-size: 0.875rem;
+  }
+  .type-section { margin: 1.25rem 0 0; }
+  .type-section h2 {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-fg-dim);
+    margin: 0 0 0.25rem;
+    padding-bottom: 0.2rem;
+    border-bottom: 1px solid var(--color-rule);
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-weight: 600;
+  }
+  .section-count {
+    font-weight: normal;
+    font-size: 0.75rem;
+    color: var(--color-fg-dim);
+    text-transform: none;
+    letter-spacing: 0;
+  }
+  .entries {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .entry {
+    scroll-margin-top: 1rem;
+  }
+  .entry:target { background: rgba(196, 48, 43, 0.06); }
+  .row {
+    display: grid;
+    grid-template-columns: 6em 1fr 2fr;
+    gap: 0.75rem;
+    padding: 0.3rem 0;
+    align-items: baseline;
+    font-size: 0.875rem;
+    line-height: 1.4;
+  }
+  .date {
+    font-variant-numeric: tabular-nums;
+    color: var(--color-fg-dim);
+  }
+  .outlet-line {
+    color: var(--color-fg-dim);
+  }
+  .title {
+    font-weight: 500;
+  }
+  .title a {
+    color: var(--color-fg);
+    text-decoration: underline;
+    text-decoration-color: var(--color-rule);
+    text-underline-offset: 3px;
+  }
+  @media (max-width: 720px) {
+    .row {
+      grid-template-columns: 6em 1fr;
+      grid-template-areas:
+        "date outlet"
+        "title title";
+    }
+    .date { grid-area: date; }
+    .outlet-line { grid-area: outlet; }
+    .title { grid-area: title; }
+  }
+</style>

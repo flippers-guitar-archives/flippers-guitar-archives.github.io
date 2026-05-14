@@ -1,0 +1,40 @@
+{
+  "type": "album",
+  "title": {
+    "ja": "three cheers for our side 〜海へ行くつもりじゃなかった〜",
+    "en": "Three Cheers for Our Side ~ We Didn't Mean to Go to Sea"
+  },
+  "releaseGroup": "three-cheers-for-our-side",
+  "releaseDate": "2006-08-25",
+  "catalogNumber": "cap-61",
+  "label": "felicity",
+  "formats": ["cd"],
+  "tracks": [
+    { "number": 1,  "title": { "ja": "Hello",                              "en": "Hello" },                              "duration": "3:15" },
+    { "number": 2,  "title": { "ja": "Boys Fire the Tricot",               "en": "Boys Fire the Tricot" },               "duration": "2:49" },
+    { "number": 3,  "title": { "ja": "Joyride",                            "en": "Joyride" },                            "duration": "2:50" },
+    { "number": 4,  "title": { "ja": "Coffee-milk Crazy",                  "en": "Coffee-milk Crazy" },                  "duration": "3:28" },
+    { "number": 5,  "title": { "ja": "My Red Shoes Story",                 "en": "My Red Shoes Story" },                 "duration": "3:55" },
+    { "number": 6,  "title": { "ja": "Exotic Lollipop (and other red roses)", "en": "Exotic Lollipop (and other red roses)" }, "duration": "1:43" },
+    { "number": 7,  "title": { "ja": "Happy Like a Honeybee",              "en": "Happy Like a Honeybee" },              "duration": "3:04" },
+    { "number": 8,  "title": { "ja": "Samba Parade",                       "en": "Samba Parade" },                       "duration": "2:44" },
+    { "number": 9,  "title": { "ja": "Sending to your Heart",              "en": "Sending to your Heart" },              "duration": "3:12" },
+    { "number": 10, "title": { "ja": "Goodbye, our Pastels Badges",        "en": "Goodbye, our Pastels Badges" },        "duration": "3:04" },
+    { "number": 11, "title": { "ja": "The Chime will Ring",                "en": "The Chime will Ring" },                "duration": "5:04" },
+    { "number": 12, "title": { "ja": "Red Flag on the Gondola",            "en": "Red Flag on the Gondola" },            "duration": "2:38" },
+    { "number": 13, "title": { "ja": "Friends Again (Single Version)",     "en": "Friends Again (Single Version)" },     "duration": "3:40", "notes": { "ja": "ボーナス・トラック", "en": "Bonus track" } }
+  ],
+  "description": {
+    "ja": "felicity (キューンレコード傘下) からの紙ジャケット仕様再発CD。リリース日は1989年原盤の発売日と同じ8月25日に合わせている。シングル「Friends Again」のシングル・ヴァージョンがボーナス・トラックとして追加収録 (全13曲)。",
+    "en": "Reissue CD on the felicity label (Cuune Records) in cardboard sleeve packaging. Issued on August 25 — the same calendar date as the 1989 original. Adds \"Friends Again (Single Version)\" as a bonus track (13 tracks total)."
+  },
+  "sources": [
+    {
+      "type": "website",
+      "citation": "MusicBrainz — Three Cheers for Our Side, 2006 felicity reissue (d96c90a1)",
+      "url": "https://musicbrainz.org/release/d96c90a1-4fc1-43c2-8a97-cb3014703488",
+      "accessedAt": "2026-05-05",
+      "note": "規格番号 cap-61、ボーナス・トラック収録の確認"
+    }
+  ]
+}

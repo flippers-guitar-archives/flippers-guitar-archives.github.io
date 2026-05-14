@@ -1,0 +1,59 @@
+{
+  "type": "album",
+  "title": {
+    "ja": "three cheers for our side 〜海へ行くつもりじゃなかった〜",
+    "en": "Three Cheers for Our Side ~ We Didn't Mean to Go to Sea"
+  },
+  "releaseGroup": "three-cheers-for-our-side",
+  "releaseDate": "1989-08-25",
+  "catalogNumber": "H30R-10004",
+  "label": "Polystar",
+  "formats": ["cd"],
+  "credits": [
+    {
+      "role": { "ja": "作詞", "en": "Lyrics" },
+      "name": "小沢健二"
+    }
+  ],
+  "tracks": [
+    { "number": 1,  "title": { "ja": "Hello",                              "en": "Hello" },                              "duration": "3:15" },
+    { "number": 2,  "title": { "ja": "Boys Fire the Tricot",               "en": "Boys Fire the Tricot" },               "duration": "2:49" },
+    { "number": 3,  "title": { "ja": "Joyride",                            "en": "Joyride" },                            "duration": "2:50" },
+    { "number": 4,  "title": { "ja": "Coffee-Milk Crazy",                  "en": "Coffee-Milk Crazy" },                  "duration": "3:28" },
+    { "number": 5,  "title": { "ja": "My Red Shoes Story",                 "en": "My Red Shoes Story" },                 "duration": "3:54" },
+    { "number": 6,  "title": { "ja": "Exotic Lollipop (And Other Red Roses)", "en": "Exotic Lollipop (And Other Red Roses)" }, "duration": "1:42" },
+    { "number": 7,  "title": { "ja": "Happy Like a Honeybee",              "en": "Happy Like a Honeybee" },              "duration": "3:03" },
+    { "number": 8,  "title": { "ja": "Samba Parade",                       "en": "Samba Parade" },                       "duration": "2:43" },
+    { "number": 9,  "title": { "ja": "Sending to Your Heart",              "en": "Sending to Your Heart" },              "duration": "3:12" },
+    { "number": 10, "title": { "ja": "Goodbye, Our Pastels Badges",        "en": "Goodbye, Our Pastels Badges" },        "duration": "3:03" },
+    { "number": 11, "title": { "ja": "The Chime Will Ring",                "en": "The Chime Will Ring" },                "duration": "5:04" },
+    { "number": 12, "title": { "ja": "Red Flag on the Gondola",            "en": "Red Flag on the Gondola" },            "duration": "2:30" }
+  ],
+  "description": {
+    "ja": "Flipper's Guitar のデビュー・スタジオ・アルバム。リリース時はメンバー5人組。全曲英語詞という当時としては異例の体裁を取り、1980年代後半のブリティッシュ・インディーポップ(ネオアコ等)の影響を色濃く反映している。リリース直後にメンバー3名が脱退し、以降は小山田圭吾・小沢健二の2人組として活動した。",
+    "en": "Flipper's Guitar's debut studio album, recorded as a five-piece. Notable for being sung entirely in English — unusual for a Japanese band at the time. Strongly influenced by late-1980s British indie pop and neo-acoustic styles. Shortly after release, three members departed, leaving the band as the duo of Keigo Oyamada and Kenji Ozawa."
+  },
+  "sources": [
+    {
+      "type": "website",
+      "citation": "MusicBrainz — Three Cheers for Our Side (release group e981e8a7)",
+      "url": "https://musicbrainz.org/release-group/e981e8a7-d83c-313f-8df8-b133f525d373",
+      "accessedAt": "2026-05-05",
+      "note": "リリース日・トラック収録時間の参照"
+    },
+    {
+      "type": "website",
+      "citation": "MusicBrainz — Three Cheers for Our Side, 1989 original CD release (0f3a2005)",
+      "url": "https://musicbrainz.org/release/0f3a2005-91e1-4b4d-b3b4-9545c0ba5a5f",
+      "accessedAt": "2026-05-05",
+      "note": "規格番号 H30R-10004、レーベル Polystar、トラックリストの参照"
+    },
+    {
+      "type": "website",
+      "citation": "Wikipedia 日本語版「three cheers for our side〜海へ行くつもりじゃなかった」",
+      "url": "https://ja.wikipedia.org/wiki/Three_cheers_for_our_side%E3%80%9C%E6%B5%B7%E3%81%B8%E8%A1%8C%E3%81%8F%E3%81%A4%E3%82%82%E3%82%8A%E3%81%98%E3%82%83%E3%81%AA%E3%81%8B%E3%81%A3%E3%81%9F",
+      "accessedAt": "2026-05-05",
+      "note": "全曲英語詞・作詞クレジット・解散後活動の文脈の参照"
+    }
+  ]
+}

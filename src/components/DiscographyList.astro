@@ -1,0 +1,153 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import {
+  ui, typeLabels, localePath, pickLocalized, type Locale,
+} from '../lib/i18n';
+import { groupReleases, type ReleaseGroup } from '../lib/discography';
+
+interface Props {
+  entries: CollectionEntry<'discography'>[];
+  lang: Locale;
+}
+
+const { entries, lang } = Astro.props;
+const t = ui[lang];
+
+type DiscographyType = CollectionEntry<'discography'>['data']['type'];
+
+const TYPE_ORDER: DiscographyType[] = [
+  'album',
+  'single',
+  'mini-album',
+  'compilation',
+  'box-set',
+  'video',
+  'production',
+  'participation',
+  'other',
+];
+
+const groups = groupReleases(entries);
+
+const byType = new Map<DiscographyType, ReleaseGroup[]>();
+for (const g of groups) {
+  const type = g.primary.data.type;
+  const list = byType.get(type);
+  if (list) list.push(g);
+  else byType.set(type, [g]);
+}
+
+const sections = TYPE_ORDER
+  .filter((type) => byType.has(type))
+  .map((type) => ({ type, groups: byType.get(type)! }));
+---
+<section class="discography-list">
+  <h1>{t.discography} <span class="count">({t.entryCount(groups.length)})</span></h1>
+
+  {sections.map(section => (
+    <section class="type-section">
+      <h2>
+        {typeLabels[lang][section.type]}
+        {section.groups.length > 1 && (
+          <span class="section-count">{t.entryCount(section.groups.length)}</span>
+        )}
+      </h2>
+      <ul>
+        {section.groups.map(group => {
+          const { primary, members } = group;
+          const releaseCount = members.length;
+          return (
+            <li>
+              <a href={localePath(lang, `/discography/${primary.id}`)} class="primary">
+                <span class="date">{primary.data.releaseDate ?? '----'}</span>
+                <span class="title">{pickLocalized(primary.data.title, lang)}</span>
+                {releaseCount > 1 && (
+                  <span class="release-count">{t.releaseCount(releaseCount)}</span>
+                )}
+              </a>
+            </li>
+          );
+        })}
+      </ul>
+    </section>
+  ))}
+</section>
+
+<style>
+  .discography-list h1 {
+    margin: 0 0 0.5rem;
+    font-size: 1.5rem;
+  }
+  .discography-list .count {
+    color: var(--color-fg-dim);
+    font-weight: normal;
+    font-size: 0.875rem;
+  }
+  .type-section {
+    margin: 2rem 0 0;
+  }
+  .type-section h2 {
+    font-size: 0.8125rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-fg-dim);
+    margin: 0 0 0.5rem;
+    padding-bottom: 0.25rem;
+    border-bottom: 1px solid var(--color-rule);
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-weight: 600;
+  }
+  .section-count {
+    font-weight: normal;
+    font-size: 0.75rem;
+    color: var(--color-fg-dim);
+    text-transform: none;
+    letter-spacing: 0;
+  }
+  .discography-list ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .discography-list li {
+    border-bottom: 1px solid var(--color-rule);
+  }
+  .discography-list li:last-child {
+    border-bottom: none;
+  }
+  .discography-list li a.primary {
+    display: grid;
+    grid-template-columns: 7em 1fr auto;
+    gap: 1rem;
+    padding: 0.6rem 0;
+    color: var(--color-fg);
+    align-items: baseline;
+  }
+  .discography-list li a:hover {
+    text-decoration: none;
+    background: rgba(196, 48, 43, 0.04);
+  }
+  .date {
+    font-variant-numeric: tabular-nums;
+    color: var(--color-fg-dim);
+    font-size: 0.875rem;
+  }
+  .title {
+    font-weight: 500;
+  }
+  .release-count {
+    font-size: 0.75rem;
+    color: var(--color-fg-dim);
+    border: 1px solid var(--color-rule);
+    border-radius: 999px;
+    padding: 0.1em 0.6em;
+    white-space: nowrap;
+  }
+  @media (max-width: 600px) {
+    .discography-list li a.primary {
+      grid-template-columns: 6em 1fr auto;
+    }
+  }
+</style>

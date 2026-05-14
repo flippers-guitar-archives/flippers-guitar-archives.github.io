@@ -1,0 +1,71 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { ui, localePath, pickLocalized, type Locale } from '../lib/i18n';
+
+interface Props {
+  entries: CollectionEntry<'live'>[];
+  lang: Locale;
+}
+
+const { entries, lang } = Astro.props;
+const t = ui[lang];
+
+const sorted = entries.toSorted((a, b) =>
+  (a.data.date ?? '9999').localeCompare(b.data.date ?? '9999')
+);
+---
+<section class="live-list">
+  <h1>{t.live} <span class="count">({t.entryCount(sorted.length)})</span></h1>
+  <ul>
+    {sorted.map(entry => (
+      <li>
+        <a href={localePath(lang, `/live/${entry.id}`)}>
+          <span class="date">{entry.data.date ?? '----'}</span>
+          <span class="venue">{pickLocalized(entry.data.venue.name, lang)}</span>
+          <span class="title">{pickLocalized(entry.data.title, lang)}</span>
+        </a>
+      </li>
+    ))}
+  </ul>
+</section>
+
+<style>
+  .live-list h1 {
+    margin: 0 0 1.5rem;
+    font-size: 1.5rem;
+  }
+  .live-list .count {
+    color: var(--color-fg-dim);
+    font-weight: normal;
+    font-size: 0.875rem;
+  }
+  .live-list ul { list-style: none; padding: 0; margin: 0; }
+  .live-list li { border-bottom: 1px solid var(--color-rule); }
+  .live-list li:last-child { border-bottom: none; }
+  .live-list li a {
+    display: grid;
+    grid-template-columns: 7em 11em 1fr;
+    gap: 1rem;
+    padding: 0.6rem 0;
+    color: var(--color-fg);
+    align-items: baseline;
+  }
+  .live-list li a:hover {
+    text-decoration: none;
+    background: rgba(196, 48, 43, 0.04);
+  }
+  .date {
+    font-variant-numeric: tabular-nums;
+    color: var(--color-fg-dim);
+    font-size: 0.875rem;
+  }
+  .venue {
+    font-size: 0.875rem;
+    color: var(--color-fg-dim);
+  }
+  .title { font-weight: 500; }
+  @media (max-width: 600px) {
+    .live-list li a { grid-template-columns: 6em 1fr; }
+    .venue { display: none; }
+  }
+</style>

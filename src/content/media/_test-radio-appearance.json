@@ -1,0 +1,27 @@
+{
+  "type": "radio",
+  "title": {
+    "ja": "テスト ラジオ出演 (仮)",
+    "en": "Test Radio Appearance (placeholder)"
+  },
+  "date": "1991-07-05",
+  "outlet": {
+    "ja": "テスト FM 局 (仮)",
+    "en": "Test FM (placeholder)"
+  },
+  "program": {
+    "ja": "テスト深夜放送 (仮)",
+    "en": "Test Late Night Show (placeholder)"
+  },
+  "description": {
+    "ja": "UI 表示検証用の仮データ。実在しないラジオ出演エントリ。type=radio の行レンダリングを確認するためのもの。",
+    "en": "Placeholder data for UI rendering tests. Fictional radio appearance entry used to verify type=radio row rendering."
+  },
+  "sources": [
+    {
+      "type": "other",
+      "citation": "UI 検証用の仮ソース (実在しない)",
+      "note": "テストデータ"
+    }
+  ]
+}

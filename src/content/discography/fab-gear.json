@@ -1,0 +1,36 @@
+{
+  "type": "production",
+  "title": {
+    "ja": "fab gear",
+    "en": "Fab Gear"
+  },
+  "artist": "V.A. (Various Artists)",
+  "releaseGroup": "fab-gear",
+  "releaseDate": "1990-12-01",
+  "label": "Polystar",
+  "formats": ["cd"],
+  "credits": [
+    { "role": { "ja": "プロデュース", "en": "Produced by" }, "name": "小山田圭吾" },
+    { "role": { "ja": "プロデュース", "en": "Produced by" }, "name": "小沢健二" }
+  ],
+  "description": {
+    "ja": "Flipper's Guitar の小山田圭吾と小沢健二がプロデュースしたオムニバス・アルバム。当時のネオアコ・ギターポップ周辺のアーティストを集めた選集で、英国の Edwyn Collins、フランスの Louis Philippe、解散していた The Monochrome Set (本作のためにポリスターが予算を工面し再結成) ら国内外のアーティストが参加。Flipper's Guitar 自身も収録されている。EAN: 4988023013756。",
+    "en": "An omnibus album curated and produced by Flipper's Guitar's Keigo Oyamada and Kenji Ozawa. A compilation of neo-acoustic / guitar-pop affiliated artists from Japan and abroad, featuring contributions by Edwyn Collins (UK), Louis Philippe (France), and The Monochrome Set (the latter reunited specifically for this release with Polystar funding). Flipper's Guitar themselves also appear on the record. EAN: 4988023013756."
+  },
+  "sources": [
+    {
+      "type": "website",
+      "citation": "Wikipedia 日本語版「フリッパーズ・ギター」",
+      "url": "https://ja.wikipedia.org/wiki/%E3%83%95%E3%83%AA%E3%83%83%E3%83%91%E3%83%BC%E3%82%BA%E3%83%BB%E3%82%AE%E3%82%BF%E3%83%BC",
+      "accessedAt": "2026-05-07",
+      "note": "FG プロデュース作品としての位置付け、Monochrome Set 再結成の経緯"
+    },
+    {
+      "type": "website",
+      "citation": "Discogs — Various – Fab Gear, 1990 CD compilation",
+      "url": "https://www.discogs.com/release/2314388-Various-Fab-Gear",
+      "accessedAt": "2026-05-07",
+      "note": "リリース日 (1990-12-01) と参加アーティスト・EANの参照 (個別トラックリストは未確認)"
+    }
+  ]
+}

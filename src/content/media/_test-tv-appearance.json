@@ -1,0 +1,27 @@
+{
+  "type": "tv",
+  "title": {
+    "ja": "テスト TV 出演 (仮)",
+    "en": "Test TV Appearance (placeholder)"
+  },
+  "date": "1990-09-15",
+  "outlet": {
+    "ja": "テスト TV 局 (仮)",
+    "en": "Test TV Network (placeholder)"
+  },
+  "program": {
+    "ja": "テスト音楽番組 (仮)",
+    "en": "Test Music Show (placeholder)"
+  },
+  "description": {
+    "ja": "UI 表示検証用の仮データ。実在しないTV出演エントリ。type=tv の行レンダリング (放送局・番組名・放送日の表示) を確認するためのもの。",
+    "en": "Placeholder data for UI rendering tests. This is a fictional TV appearance entry used to verify how type=tv rows render (outlet, program, broadcast date)."
+  },
+  "sources": [
+    {
+      "type": "other",
+      "citation": "UI 検証用の仮ソース (実在しない)",
+      "note": "テストデータ"
+    }
+  ]
+}

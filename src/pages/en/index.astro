@@ -1,0 +1,12 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import DiscographyList from '../../components/DiscographyList.astro';
+import { ui } from '../../lib/i18n';
+
+const entries = await getCollection('discography');
+const t = ui.en;
+---
+<BaseLayout lang="en" title={t.discography}>
+  <DiscographyList entries={entries} lang="en" />
+</BaseLayout>

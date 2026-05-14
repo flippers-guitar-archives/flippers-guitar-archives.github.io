@@ -1,0 +1,40 @@
+{
+  "type": "single",
+  "title": {
+    "ja": "Friends Again",
+    "en": "Friends Again"
+  },
+  "releaseGroup": "friends-again",
+  "releaseDate": "1990-01-25",
+  "catalogNumber": "PSDR-1001",
+  "label": "Polystar",
+  "formats": ["cd-single"],
+  "credits": [
+    { "role": { "ja": "作詞・作曲", "en": "Lyrics, Music" }, "name": "小沢健二" },
+    { "role": { "ja": "作詞・作曲", "en": "Lyrics, Music" }, "name": "小山田圭吾" },
+    { "role": { "ja": "ヴォーカル (フィーチャリング)", "en": "Featured Vocals" }, "name": "佐々木真美子" }
+  ],
+  "tracks": [
+    { "number": 1, "title": { "ja": "Friends Again", "en": "Friends Again" } }
+  ],
+  "description": {
+    "ja": "Flipper's Guitar のデビュー・シングル。1989年8月リリースのデビュー・アルバム後にメンバー3名が脱退し、小山田圭吾と小沢健二の2人組となって以降の最初のリリース。8cm CDシングル仕様。表題曲は佐々木真美子をフィーチャリング・ヴォーカルに迎えている。 規格番号はジャケット表記が PSDR-1001、背・ディスク表記が PSDR-5130 と二重に記載されている (二度割り当てされたものと思われる)。",
+    "en": "Flipper's Guitar's debut single. The band's first release as a duo (Keigo Oyamada and Kenji Ozawa) after three members departed following the release of their debut album in August 1989. Issued as an 8cm CD single. The title track features guest vocals by Mamiko Sasaki. Note: the catalog number appears as PSDR-1001 on the cover but PSDR-5130 on the spine and disc — likely the result of a re-allocation."
+  },
+  "sources": [
+    {
+      "type": "website",
+      "citation": "Discogs — The Flipper's Guitar – Friends Again, 1990 8cm CD single",
+      "url": "https://www.discogs.com/release/7670395-The-Flippers-Guitar-Friends-Again",
+      "accessedAt": "2026-05-07",
+      "note": "規格番号 (PSDR-1001 / PSDR-5130) と8cm CDシングル仕様の参照"
+    },
+    {
+      "type": "website",
+      "citation": "Wikipedia 日本語版「フリッパーズ・ギター」",
+      "url": "https://ja.wikipedia.org/wiki/%E3%83%95%E3%83%AA%E3%83%83%E3%83%91%E3%83%BC%E3%82%BA%E3%83%BB%E3%82%AE%E3%82%BF%E3%83%BC",
+      "accessedAt": "2026-05-07",
+      "note": "リリース日 (1990-01-25) と作詞作曲クレジットの参照"
+    }
+  ]
+}

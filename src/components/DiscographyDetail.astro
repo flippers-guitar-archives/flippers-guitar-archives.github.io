@@ -1,0 +1,256 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import {
+  ui, typeLabels, formatLabels, sourceTypeLabels,
+  pickLocalized, pickLocalizedOptional, localePath, type Locale,
+} from '../lib/i18n';
+
+interface Props {
+  entry: CollectionEntry<'discography'>;
+  siblings: CollectionEntry<'discography'>[];
+  isPrimary: boolean;
+  lang: Locale;
+}
+
+const { entry, siblings, isPrimary, lang } = Astro.props;
+const t = ui[lang];
+const d = entry.data;
+const desc = pickLocalizedOptional(d.description, lang);
+const totalReleases = siblings.length + 1;
+---
+<article class="entry-detail">
+  <p class="back"><a href={localePath(lang, '/')}>← {t.backToList}</a></p>
+
+  <header>
+    <p class="kicker">
+      {typeLabels[lang][d.type]}
+      {totalReleases > 1 && (
+        <span class={`release-badge ${isPrimary ? 'is-primary' : 'is-reissue'}`}>
+          {isPrimary ? t.primaryRelease : t.reissue}
+        </span>
+      )}
+    </p>
+    <h1>{pickLocalized(d.title, lang)}</h1>
+    <p class="artist">{d.artist}</p>
+  </header>
+
+  <dl class="meta">
+    {d.releaseDate && (<><dt>{t.releaseDate}</dt><dd>{d.releaseDate}</dd></>)}
+    {d.catalogNumber && (<><dt>{t.catalogNumber}</dt><dd>{d.catalogNumber}</dd></>)}
+    {d.label && (<><dt>{t.label}</dt><dd>{d.label}</dd></>)}
+    {d.formats && d.formats.length > 0 && (
+      <><dt>{t.format}</dt><dd>{d.formats.map(f => formatLabels[lang][f]).join(' / ')}</dd></>
+    )}
+  </dl>
+
+  {desc && (
+    <section>
+      <h2>{t.description}</h2>
+      <p class="description">{desc}</p>
+    </section>
+  )}
+
+  {d.credits && d.credits.length > 0 && (
+    <section>
+      <h2>{t.credits}</h2>
+      <ul class="credits">
+        {d.credits.map(c => (
+          <li><span class="role">{pickLocalized(c.role, lang)}</span><span class="name">{c.name}</span></li>
+        ))}
+      </ul>
+    </section>
+  )}
+
+  {d.tracks && d.tracks.length > 0 && (
+    <section>
+      <h2>{t.tracks}</h2>
+      <ol class="tracks">
+        {d.tracks.map(track => {
+          const note = pickLocalizedOptional(track.notes, lang);
+          return (
+            <li value={track.number}>
+              <span class="track-title">{pickLocalized(track.title, lang)}{note && <span class="track-note"> — {note}</span>}</span>
+              {track.duration && <span class="track-duration">{track.duration}</span>}
+            </li>
+          );
+        })}
+      </ol>
+    </section>
+  )}
+
+  {siblings.length > 0 && (
+    <section class="other-releases">
+      <h2>{t.otherReleases}</h2>
+      <ul>
+        {siblings.map(sib => (
+          <li>
+            <a href={localePath(lang, `/discography/${sib.id}`)}>
+              <span class="date">{sib.data.releaseDate ?? '----'}</span>
+              <span class="catalog">{sib.data.catalogNumber ?? '—'}</span>
+              <span class="label">{sib.data.label ?? ''}</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </section>
+  )}
+
+  <section>
+    <h2>{t.sources}</h2>
+    <ol class="sources">
+      {d.sources.map(s => (
+        <li>
+          <span class="source-type">[{sourceTypeLabels[lang][s.type]}]</span>
+          {s.url
+            ? <a href={s.url} target="_blank" rel="noopener noreferrer">{s.citation}</a>
+            : <span>{s.citation}</span>}
+          {s.accessedAt && <span class="accessed"> ({t.accessedAt}: {s.accessedAt})</span>}
+          {s.note && <span class="note"> — {s.note}</span>}
+        </li>
+      ))}
+    </ol>
+  </section>
+</article>
+
+<style>
+  .entry-detail .back {
+    font-size: 0.875rem;
+    margin: 0 0 1.5rem;
+  }
+  .entry-detail header { margin-bottom: 1.5rem; }
+  .entry-detail .kicker {
+    margin: 0;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-fg-dim);
+    display: flex;
+    gap: 0.75rem;
+    align-items: baseline;
+  }
+  .release-badge {
+    font-size: 0.6875rem;
+    border-radius: 999px;
+    padding: 0.05em 0.6em;
+    letter-spacing: 0.04em;
+  }
+  .release-badge.is-primary {
+    color: var(--color-accent);
+    border: 1px solid var(--color-accent);
+  }
+  .release-badge.is-reissue {
+    color: var(--color-fg-dim);
+    border: 1px solid var(--color-rule);
+  }
+  .entry-detail h1 {
+    font-size: 1.75rem;
+    margin: 0.25rem 0 0.5rem;
+  }
+  .entry-detail .artist {
+    margin: 0;
+    color: var(--color-fg-dim);
+    font-size: 0.95rem;
+  }
+  .meta {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: 0.25rem 1.25rem;
+    padding: 1rem 0;
+    margin: 0 0 2rem;
+    border-top: 1px solid var(--color-rule);
+    border-bottom: 1px solid var(--color-rule);
+    font-size: 0.95rem;
+  }
+  .meta dt {
+    color: var(--color-fg-dim);
+    font-size: 0.8125rem;
+  }
+  .meta dd { margin: 0; }
+  section { margin: 2rem 0; }
+  section h2 {
+    font-size: 1.05rem;
+    margin: 0 0 0.75rem;
+    padding-bottom: 0.25rem;
+    border-bottom: 1px solid var(--color-rule);
+  }
+  .description { margin: 0; }
+  .credits {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: 0.25rem 1rem;
+  }
+  .credits li { display: contents; }
+  .credits .role {
+    color: var(--color-fg-dim);
+    font-size: 0.875rem;
+  }
+  .tracks {
+    padding-left: 2rem;
+    margin: 0;
+  }
+  .tracks li {
+    padding: 0.25rem 0;
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+  .track-note {
+    color: var(--color-fg-dim);
+    font-size: 0.8125rem;
+  }
+  .track-duration {
+    color: var(--color-fg-dim);
+    font-size: 0.875rem;
+    font-variant-numeric: tabular-nums;
+  }
+  .other-releases ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .other-releases li {
+    border-bottom: 1px solid var(--color-rule);
+  }
+  .other-releases li a {
+    display: grid;
+    grid-template-columns: 7em 8em 1fr;
+    gap: 1rem;
+    padding: 0.5rem 0;
+    color: var(--color-fg);
+    align-items: baseline;
+    font-size: 0.9rem;
+  }
+  .other-releases li a:hover {
+    text-decoration: none;
+    background: rgba(196, 48, 43, 0.04);
+  }
+  .other-releases .date {
+    font-variant-numeric: tabular-nums;
+    color: var(--color-fg-dim);
+  }
+  .other-releases .catalog {
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 0.85rem;
+  }
+  .other-releases .label {
+    color: var(--color-fg-dim);
+  }
+  .sources {
+    padding-left: 1.5rem;
+    margin: 0;
+    font-size: 0.9rem;
+  }
+  .sources li { padding: 0.25rem 0; }
+  .source-type {
+    color: var(--color-fg-dim);
+    font-size: 0.8125rem;
+    margin-right: 0.25rem;
+  }
+  .accessed, .note {
+    color: var(--color-fg-dim);
+    font-size: 0.8125rem;
+  }
+</style>

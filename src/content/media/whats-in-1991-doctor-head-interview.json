@@ -1,0 +1,27 @@
+{
+  "type": "magazine",
+  "title": {
+    "ja": "『ヘッド博士の世界塔』対談インタビュー",
+    "en": "Doctor Head's World Tower Interview"
+  },
+  "date": "1991",
+  "outlet": {
+    "ja": "What's In?",
+    "en": "What's In?"
+  },
+  "issue": "1991年内号 (具体的な号数は要確認)",
+  "description": {
+    "ja": "サードアルバム『DOCTOR HEAD'S WORLD TOWER』のリリースに合わせた小山田圭吾と小沢健二による対談形式のロングインタビュー。アイドル・バンド的なイメージからの脱却、サンプリング手法を全面採用した制作プロセスの転換、マンチェスター/インディ・ダンスの影響、サイケデリックへの視点、シングル「GROOVE TUBE」やライブパフォーマンス (前年12月のパルコ劇場公演、6月のライブ等) についての発言が含まれる。",
+    "en": "A long-form conversation between Keigo Oyamada and Kenji Ozawa timed to the release of their third album DOCTOR HEAD'S WORLD TOWER. Topics include moving away from the band's prior \"idol band\" image, the shift to a sampling-driven production process, the influence of Manchester / indie dance, perspectives on psychedelic music, and references to the \"GROOVE TUBE\" single and recent live performances (Parco Theater the previous December, a June 1991 show)."
+  },
+  "relatedDiscography": ["doctor-heads-world-tower"],
+  "sources": [
+    {
+      "type": "website",
+      "citation": "flipper's guitar を探して (ブログ転載)「インタビュー what's in 1991」",
+      "url": "https://ameblo.jp/analysis-of-fg/entry-10001885700.html",
+      "accessedAt": "2026-05-13",
+      "note": "インタビュー内容の参照。元雑誌の号数・発売日・ページ数は当該ブログ記事に明記されておらず未確認"
+    }
+  ]
+}

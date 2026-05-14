@@ -1,0 +1,31 @@
+{
+  "type": "video",
+  "title": {
+    "ja": "The Lost Pictures 〜それゆけフリッパーズ!! 名画危機一髪〜",
+    "en": "The Lost Pictures"
+  },
+  "releaseGroup": "the-lost-pictures",
+  "releaseDate": "1990-03-10",
+  "label": "Polystar",
+  "formats": ["vhs"],
+  "description": {
+    "ja": "Flipper's Guitar 初の映像作品。「それゆけフリッパーズ!!」シリーズ第1弾。当時メンバー3人が脱退する直前に5人組として収録されたミュージック・ビデオ・CMフィルム・未公開映像などを収録。1991年に同シリーズ第3弾「Testament」までVHS3本がリリースされ、2004年にDVD「THE LOST PICTURES, ORIGINAL CLIPS & CM'S plus TESTAMENT」として3本セットでDVD化された。",
+    "en": "Flipper's Guitar's first video release; the inaugural entry in the \"It's Flippers!! (それゆけフリッパーズ!!)\" video series. Compiles music videos, CM (commercial) footage, and unreleased material recorded with the original five-piece lineup shortly before three members departed. Two further VHS volumes followed through 1991, and all three were collected on DVD in 2004 as \"THE LOST PICTURES, ORIGINAL CLIPS & CM'S plus TESTAMENT\"."
+  },
+  "sources": [
+    {
+      "type": "website",
+      "citation": "Wikipedia 日本語版「フリッパーズ・ギター」",
+      "url": "https://ja.wikipedia.org/wiki/%E3%83%95%E3%83%AA%E3%83%83%E3%83%91%E3%83%BC%E3%82%BA%E3%83%BB%E3%82%AE%E3%82%BF%E3%83%BC",
+      "accessedAt": "2026-05-07",
+      "note": "リリース日 (1990-03-10)・タイトル・VHS規格・「それゆけフリッパーズ!!」シリーズの位置付けの参照"
+    },
+    {
+      "type": "website",
+      "citation": "Polystar Records 公式サイト — Flipper's Guitar 映像集 (DVD版)",
+      "url": "https://www.polystar.co.jp/release/rockpopsalternative/000223",
+      "accessedAt": "2026-05-07",
+      "note": "後年のDVD収録作の確認 (1990年VHS版そのものの規格番号は確認できず、未記入)"
+    }
+  ]
+}

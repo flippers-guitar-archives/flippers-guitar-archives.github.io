@@ -1,0 +1,50 @@
+{
+  "type": "compilation",
+  "title": {
+    "ja": "colour me pop",
+    "en": "Colour Me Pop"
+  },
+  "releaseGroup": "colour-me-pop",
+  "releaseDate": "1991-12-21",
+  "catalogNumber": "PSCR-1042",
+  "label": "Trattoria / Polystar",
+  "formats": ["cd"],
+  "tracks": [
+    { "number": 1,  "title": { "ja": "いとこの来る日曜日",                     "en": "Hello" },                                         "duration": "3:15" },
+    { "number": 2,  "title": { "ja": "コーヒーミルク・クレイジー",             "en": "Coffee-Milk Crazy" },                             "duration": "3:26" },
+    { "number": 3,  "title": { "ja": "奇妙なロリポップ",                       "en": "Exotic Lollipop (And Other Red Roses)" },         "duration": "1:44" },
+    { "number": 4,  "title": { "ja": "フレンズ・アゲイン",                     "en": "Friends Again" },                                 "duration": "4:05" },
+    { "number": 5,  "title": { "ja": "カメラ!カメラ!カメラ!",                  "en": "Camera! Camera! Camera! (Guitar Pop version)" },  "duration": "3:45" },
+    { "number": 6,  "title": { "ja": "ラテンでレッツ・ラヴまたは1990サマー・ビューティ計画", "en": "Summer Beauty 1990" },                "duration": "4:40" },
+    { "number": 7,  "title": { "ja": "南へ急ごう",                             "en": "Southbound Excursion" },                          "duration": "2:28" },
+    { "number": 8,  "title": { "ja": "恋とマシンガン (Live)",                  "en": "Young, Alive, in Love (live)" },                  "duration": "4:58" },
+    { "number": 9,  "title": { "ja": "ラヴ・トレイン",                         "en": "Love Train" },                                    "duration": "3:24" },
+    { "number": 10, "title": { "ja": "クールなスパイでぶっとばせ (Live)",       "en": "Cool Spy on a Hot Car (live)" },                  "duration": "5:01" },
+    { "number": 11, "title": { "ja": "スライド",                               "en": "Slide" },                                         "duration": "5:18" },
+    { "number": 12, "title": { "ja": "グルーヴ・チューブ・パート2",            "en": "Groove Tube Part 2" },                            "duration": "9:11" },
+    { "number": 13, "title": { "ja": "ラヴ・アンド・ドリームふたたび",         "en": "Love and Dreams Are Back" },                      "duration": "4:35" },
+    { "number": 14, "title": { "ja": "クラウディー",                           "en": "Cloudy (Is My Sunny Mood)" },                     "duration": "3:27" },
+    { "number": 15, "title": { "ja": "ビッグ・バッド・ディスコ(Smaller)",       "en": "Big Bad Disco (Smaller)" },                       "duration": "4:20" },
+    { "number": 16, "title": { "ja": "世界搭よ永遠に",                         "en": "The World Tower" },                               "duration": "10:35" }
+  ],
+  "description": {
+    "ja": "解散後の1991年12月にリリースされたコンピレーション・アルバム。シングルB面・カップリング・別ヴァージョン・ライブ音源など、過去3作のオリジナル・アルバムには未収録のトラックを集めたレアトラック集。Trattoria レーベルの第1弾 (menu 1) としてリリース。",
+    "en": "A post-disband compilation released in December 1991, collecting B-sides, couplings, alternate versions, and live recordings not included on the three original studio albums. Released as the inaugural release (menu 1) on the Trattoria label."
+  },
+  "sources": [
+    {
+      "type": "website",
+      "citation": "MusicBrainz — Colour Me Pop, 1991-12-21 release (85b35047)",
+      "url": "https://musicbrainz.org/release/85b35047-24ef-43f6-b930-720bb9722780",
+      "accessedAt": "2026-05-07",
+      "note": "規格番号 PSCR-1042、レーベル (Trattoria menu 1 / Polystar) およびトラックリストの参照"
+    },
+    {
+      "type": "website",
+      "citation": "Wikipedia 日本語版「フリッパーズ・ギター」",
+      "url": "https://ja.wikipedia.org/wiki/%E3%83%95%E3%83%AA%E3%83%83%E3%83%91%E3%83%BC%E3%82%BA%E3%83%BB%E3%82%AE%E3%82%BF%E3%83%BC",
+      "accessedAt": "2026-05-07",
+      "note": "「レアトラック集」というアルバムの位置付けの参照"
+    }
+  ]
+}

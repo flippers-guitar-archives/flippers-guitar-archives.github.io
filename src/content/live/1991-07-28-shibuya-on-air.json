@@ -1,0 +1,56 @@
+{
+  "title": {
+    "ja": "Doctor Head Tour @ 渋谷ON AIR",
+    "en": "Doctor Head Tour @ Shibuya On Air"
+  },
+  "date": "1991-07-28",
+  "venue": {
+    "name": {
+      "ja": "渋谷ON AIR",
+      "en": "Shibuya On Air"
+    },
+    "city": { "ja": "渋谷区", "en": "Shibuya" },
+    "prefecture": "Tokyo"
+  },
+  "tour": "doctor-head-tour-1991",
+  "description": {
+    "ja": "サードアルバム『DOCTOR HEAD'S WORLD TOWER』のリリース直後に行われた「Doctor Head Tour」の東京公演。ツアー全体は1991年7月19日〜29日にかけて名古屋・大阪・東京で開催。打ち込みのバックトラックに小山田・小沢の生演奏 (ヴォーカル・ギター) およびパーカッションを乗せる構成で、ステージ上は3人。本編は『ヘッド博士の世界塔』全9曲のうち「Dolphin Song」「The World Tower」を除いた7曲に「Love Train」「Slide」を加えた構成だったとされる (本公演固有のセットリスト・演奏順は未確認)。スタンディング/¥3,300。後援: J-WAVE / 協力: ポリスター / 企画制作: T.K.O Corp.・H.I.P. ※下記セットリストおよびメンバー編成は UI 表示検証用の仮データ (実際の演奏曲・参加メンバーとは異なる)。",
+    "en": "Tokyo date of the \"Doctor Head Tour\", staged shortly after the release of the third album DOCTOR HEAD'S WORLD TOWER. The tour ran 19–29 July 1991 across Nagoya, Osaka, and Tokyo. Live arrangements layered Oyamada and Ozawa's vocals, guitar, and percussion over backing tracks, with three performers on stage. The main set reportedly comprised every track from Doctor Head's World Tower except \"Dolphin Song\" and \"The World Tower\", plus \"Love Train\" and \"Slide\" (show-specific order unconfirmed). Standing room / ¥3,300. Sponsored by J-WAVE; supported by Polystar; produced by T.K.O Corp. and H.I.P. NOTE: the setlist and lineup below are placeholder data used to test UI rendering — they do not reflect the actual performance."
+  },
+  "lineup": [
+    { "name": "メンバー1 (仮)", "role": { "ja": "ヴォーカル・ギター", "en": "Vocals, Guitar" } },
+    { "name": "メンバー2 (仮)", "role": { "ja": "ヴォーカル・ギター", "en": "Vocals, Guitar" } },
+    { "name": "メンバー3 (仮)", "role": { "ja": "パーカッション", "en": "Percussion" }, "isSupport": true }
+  ],
+  "setlist": [
+    { "position": 1, "title": { "ja": "テスト曲 1", "en": "Test Song 1" } },
+    { "position": 2, "title": { "ja": "テスト曲 2 (リンク有り)", "en": "Test Song 2 (with link)" }, "reference": "three-cheers-for-our-side" },
+    { "position": 3, "title": { "ja": "テスト曲 3", "en": "Test Song 3" } },
+    { "position": 4, "title": { "ja": "テスト曲 4 (注釈付き)", "en": "Test Song 4 (with note)" }, "notes": { "ja": "演奏中にアンプトラブルが発生 (仮)", "en": "Amp issue mid-song (placeholder)" } },
+    { "position": 5, "title": { "ja": "テスト・カバー曲", "en": "Test Cover Song" }, "isCover": true, "originalArtist": "Test Original Artist" },
+    { "position": 6, "title": { "ja": "テスト曲 6", "en": "Test Song 6" } },
+    { "position": 7, "title": { "ja": "テスト・アンコール曲 1", "en": "Test Encore 1" }, "encore": true },
+    { "position": 8, "title": { "ja": "テスト・アンコール曲 2", "en": "Test Encore 2" }, "encore": true }
+  ],
+  "sources": [
+    {
+      "type": "website",
+      "citation": "LiveFans — Flipper's Guitar @ 渋谷ON AIR (1991.07.28)",
+      "url": "https://www.livefans.jp/events/1628794",
+      "accessedAt": "2026-05-09",
+      "note": "日付・会場・ツアー名・チケット情報・主催/後援/協力の参照 (セットリストは未登録)"
+    },
+    {
+      "type": "website",
+      "citation": "フリッパーズ・ギターファンにつけるブログ「ヘッド博士の頃のライブ」",
+      "url": "http://flippersguitar.blogspot.com/2012/04/blog-post.html",
+      "accessedAt": "2026-05-09",
+      "note": "ツアー全体のセットリスト概要・3人編成 (打ち込み+生音+パーカッション) の参照"
+    },
+    {
+      "type": "book",
+      "citation": "テスト書籍 (仮)『フリッパーズ・ギター全史』著者名・出版社・刊行年・ISBN・該当ページ等を citation 文字列に集約する想定。pp. 123–145。",
+      "note": "UI 表示検証用の仮データ — 実在しない書籍。書籍出典の表示パターンを確認するためのもの"
+    }
+  ]
+}

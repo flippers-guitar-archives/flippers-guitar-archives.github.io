@@ -1,0 +1,24 @@
+---
+import { getCollection, type CollectionEntry } from 'astro:content';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import LiveDetail from '../../../components/LiveDetail.astro';
+import { pickLocalized } from '../../../lib/i18n';
+
+export async function getStaticPaths() {
+  const entries = await getCollection('live');
+  return entries.map((entry) => ({
+    params: { slug: entry.id },
+    props: { entry },
+  }));
+}
+
+interface Props {
+  entry: CollectionEntry<'live'>;
+}
+
+const { entry } = Astro.props;
+const title = pickLocalized(entry.data.title, 'en');
+---
+<BaseLayout lang="en" title={title}>
+  <LiveDetail entry={entry} lang="en" />
+</BaseLayout>
